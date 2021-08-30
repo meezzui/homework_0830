@@ -1,0 +1,83 @@
+<!— head.html —>
+<div th:replace="fragment/head :: head"></div>
+<!— head.html 끝—>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/vue@2.6.0"></script>
+
+
+<!-- Contents-->
+<div class="content-wrapper">
+    <div class="row">
+        <table class="table table-borered table-hover dataTable">
+            <thead>
+            <tr role="row">
+                <th class="text-center bg-light-blue" tabindex="0" rowspan="1" colspan="1">
+                    번호
+                </th>
+                <th class="text-center bg-light-blue" tabindex="0" rowspan="1" colspan="1">
+                    이름
+                </th>
+                <th class="text-center bg-light-blue" tabindex="0" rowspan="1" colspan="1">
+                    오더타입
+                </th>
+                <th class="text-center bg-light-blue" tabindex="0" rowspan="1" colspan="1">
+                    상태
+                </th>
+                <th class="text-center bg-light-blue" tabindex="0" rowspan="1" colspan="1">
+                    받는주소
+                </th>
+                <th class="text-center bg-light-blue" tabindex="0" rowspan="1" colspan="1">
+                    받는사람
+                </th>
+                <th class="text-center bg-light-blue" tabindex="0" rowspan="1" colspan="1">
+                    결제방법
+                </th>
+                <th class="text-center bg-light-blue" tabindex="0" rowspan="1" colspan="1">
+                    총가격
+                </th>
+                <th class="text-center bg-light-blue" tabindex="0" rowspan="1" colspan="1">
+                    개수
+                </th>
+                <th class="text-center bg-light-blue" tabindex="0" rowspan="1" colspan="1">
+                    주문날짜
+                </th>
+                <th class="text-center bg-light-blue" tabindex="0" rowspan="1" colspan="1">
+                    도착날짜
+                </th>
+                <th class="text-center bg-light-blue" tabindex="0" rowspan="1" colspan="1">
+                    등록날짜
+                </th>
+
+            </tr>
+            </thead>
+            <tbody id="itemList">
+            <tr role="row" class="odd" v-for="dto in itemList">
+                <td class="text-center">{{dto.id}}</td>
+                <td class="text-center">{{dto.orderDataType}}</td>
+                <td class="text-center">{{dto.status}}</td>
+                <td class="text-center">{{dto.revAddress}}</td>
+                <td class="text-center">{{dto.revName}}</td>
+                <td class="text-center">{{dto.paymentType}}</td>
+                <td class="text-center">{{dto.totalQuantity}}</td>
+                <td class="text-center">{{dto.orderAt}}</td>
+                <td class="text-center">{{dto.arrivalDate}}</td>
+                <td class="text-center">{{dto.regDate}}</td>
+
+
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="row">
+        <div class="col-sm-5">
+            <div id="showPage" class="dataTables_info" role="status">
+                총 {{totalElements}} 개의 데이터, 현재 {{currentPage}} 페이지
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Content End -->
+<script src="/app/ordergroup.js"></script>
+</body>
+
+</html>

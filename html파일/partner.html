@@ -1,0 +1,70 @@
+<!— head.html —>
+<div th:replace="fragment/head :: head"></div>
+<!— head.html 끝—>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/vue@2.6.0"></script>
+
+
+<!-- Contents-->
+<div class="content-wrapper">
+    <div class="row">
+        <table class="table table-borered table-hover dataTable">
+            <thead>
+            <tr role="row">
+                <th class="text-center bg-light-blue" tabindex="0" rowspan="1" colspan="1">
+                    번호
+                </th>
+                <th class="text-center bg-light-blue" tabindex="0" rowspan="1" colspan="1">
+                    이름
+                </th>
+                <th class="text-center bg-light-blue" tabindex="0" rowspan="1" colspan="1">
+                    상태
+                </th>
+                <th class="text-center bg-light-blue" tabindex="0" rowspan="1" colspan="1">
+                    주소
+                </th>
+                <th class="text-center bg-light-blue" tabindex="0" rowspan="1" colspan="1">
+                    콜센터
+                </th>
+                <th class="text-center bg-light-blue" tabindex="0" rowspan="1" colspan="1">
+                    비즈니스 넘버
+                </th>
+                <th class="text-center bg-light-blue" tabindex="0" rowspan="1" colspan="1">
+                    ceo 이름
+                </th>
+                <th class="text-center bg-light-blue" tabindex="0" rowspan="1" colspan="1">
+                    등록일
+                </th>
+
+
+            </tr>
+            </thead>
+            <tbody id="itemList">
+            <tr role="row" class="odd" v-for="dto in itemList">
+                <td class="text-center">{{dto.id}}</td>
+                <td class="text-center">{{dto.name}}</td>
+                <td class="text-center">{{dto.status}}</td>
+                <td class="text-center">{{dto.address}}</td>
+                <td class="text-center">{{dto.callCenter}}</td>
+                <td class="text-center">{{dto.businessNumber}}</td>
+                <td class="text-center">{{dto.ceoName}}</td>
+                <td class="text-center">{{dto.regDate}}</td>
+
+
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="row">
+        <div class="col-sm-5">
+            <div id="showPage" class="dataTables_info" role="status">
+                총 {{totalElements}} 개의 데이터, 현재 {{currentPage}} 페이지
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Content End -->
+<script src="/app/partner.js"></script>
+</body>
+
+</html>
